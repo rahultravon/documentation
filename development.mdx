@@ -1,94 +1,223 @@
 ---
 title: "Dashboard"
-description: "Preview changes locally to update your docs"
+description: "Learn how to navigate the Travon AI dashboard and where the main operational workflows live."
 ---
 
-<Info>
-  **Prerequisites**:
+## Dashboard overview
 
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
-</Info>
+The Travon dashboard is where your team manages the day-to-day operation of voice workflows.
 
-Follow these steps to install and run Mintlify on your operating system.
+This is where you create agents, launch campaigns, monitor calls, inspect transcripts, review outcomes, and improve performance over time.
+
+<Note>
+If you are new to Travon, do not try to learn every section at once. Start with Agents, Campaigns, History, and Analytics. That will give you the clearest view of how the platform works.
+</Note>
+
+## What you can do from the dashboard
+
+<Columns cols={2}>
+  <Card title="Create and manage agents" icon="microphone-lines">
+    Define the purpose, tone, language, and behavior of each voice agent.
+  </Card>
+
+  <Card title="Launch campaigns" icon="phone-volume">
+    Start outbound calling workflows using selected agents, lists, schedules, and execution settings.
+  </Card>
+
+  <Card title="Review call history" icon="clock-rotate-left">
+    Inspect transcripts, summaries, outcomes, and key call-level details to understand what happened.
+  </Card>
+
+  <Card title="Track performance" icon="chart-line">
+    Monitor answer rates, conversions, transfers, call durations, and broader campaign trends.
+  </Card>
+
+  <Card title="Configure integrations" icon="plug">
+    Connect telephony, CRMs, internal systems, or automation flows that support your workflow.
+  </Card>
+
+  <Card title="Improve workflow quality" icon="wand-magic-sparkles">
+    Use real call data to refine prompts, workflows, fallback behavior, and handoff conditions.
+  </Card>
+</Columns>
+
+## Main dashboard areas
+
+### Agents
+
+The Agents section is where you create and update your AI voice agents.
+
+This is typically where you configure:
+
+- agent name
+- role and objective
+- language and voice
+- prompt behavior
+- workflow or step logic
+- fallback rules
+- transfer or handoff conditions
+
+A good agent setup should be specific, measurable, and tied to one clear use case.
+
+### Campaigns
+
+The Campaigns section is where you run outbound execution.
+
+This is where teams usually:
+
+- select an agent
+- upload or connect a contact list
+- configure scheduling
+- manage retries
+- monitor campaign progress
+- review outcomes at the batch level
+
+<Tip>
+For first-time launches, always start with a small batch before scaling to a large audience.
+</Tip>
+
+### History
+
+The History section helps you inspect calls one by one.
+
+This is often the most useful area when you are debugging or improving performance.
+
+You may review details such as:
+
+- transcript
+- summary
+- call status
+- timestamps
+- disposition or outcome
+- transfer behavior
+- edge-case handling
+
+### Analytics
+
+The Analytics section helps you understand trends across many calls rather than just one.
+
+Teams commonly use this section to track:
+
+- connected vs unanswered calls
+- campaign performance
+- conversion or qualification rates
+- transfer rates
+- call duration trends
+- workflow drop-off patterns
+
+### Telephony and numbers
+
+Depending on your setup, the dashboard may include a dedicated area for telephony and number configuration.
+
+This is where you manage:
+
+- connected phone numbers
+- routing setup
+- provider settings
+- webhook flows
+- inbound and outbound behavior
+
+### Integrations
+
+The Integrations area is where Travon connects to the rest of your business systems.
+
+Examples can include:
+
+- telephony providers
+- CRM systems
+- webhooks
+- internal APIs
+- external workflow automations
+
+## A typical daily workflow
+
+Most operations teams use the dashboard in a repeating loop.
 
 <Steps>
-  <Step title="Install the Mintlify CLI">
-    ```bash
-    npm i -g mint
-    ```
+  <Step title="Review performance">
+    Start by checking campaign results, major trends, or drop-offs in Analytics.
   </Step>
-  <Step title="Preview locally">
-    Navigate to your docs directory where your `docs.json` file is located, and run the following command:
 
-    ```bash
-    mint dev
-    ```
+  <Step title="Inspect real calls">
+    Open History and review actual transcripts to understand where the workflow succeeded or failed.
+  </Step>
 
-    A local preview of your documentation will be available at `http://localhost:3000`.
+  <Step title="Update the agent or workflow">
+    Refine prompts, branching logic, fallback handling, or transfer rules based on what you observed.
+  </Step>
+
+  <Step title="Relaunch or continue">
+    Run another controlled batch or continue the workflow with improved settings.
+  </Step>
+
+  <Step title="Measure again">
+    Compare the updated performance and continue improving iteratively.
   </Step>
 </Steps>
 
-## Custom ports
+## What new users should focus on first
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+If this is your first time in the dashboard, focus on these four areas in order:
 
-```bash
-mint dev --port 3333
-```
+<Columns cols={2}>
+  <Card title="1. Agents" icon="user-gear">
+    Understand how each agent is defined and what business use case it is responsible for.
+  </Card>
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+  <Card title="2. Campaigns" icon="bullhorn">
+    Learn how calls are launched, scheduled, and tracked operationally.
+  </Card>
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+  <Card title="3. History" icon="file-lines">
+    Review real calls and get comfortable reading transcripts and outcomes.
+  </Card>
 
-## Mintlify versions
+  <Card title="4. Analytics" icon="chart-pie-simple">
+    Learn how to measure performance across a larger set of calls.
+  </Card>
+</Columns>
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+## Suggested ownership by team
 
-```bash
-npm mint update
-```
+Different teams usually use different parts of the dashboard most heavily.
 
-## Validating links
+| Team | Main areas |
+|---|---|
+| Operations | Campaigns, History, Analytics |
+| Product | Agents, Workflows, Analytics |
+| Engineering | Telephony, Integrations, API-related setup |
+| QA | History, workflow review, edge-case analysis |
+| Leadership | Analytics, trends, business outcomes |
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+## Best practices for using the dashboard
 
-```bash
-mint broken-links
-```
+- keep agent names clear and specific
+- launch in small batches before scaling
+- review transcripts before making major prompt changes
+- track business outcomes, not just call counts
+- define handoff rules before going live
+- revisit workflows regularly using real call behavior
 
-## Deployment
+<Warning>
+Do not judge workflow quality only by whether the agent sounds fluent. The real test is whether the call reaches the correct business outcome reliably.
+</Warning>
 
-If the deployment is successful, you should see the following:
+## Recommended next steps
 
-<Frame>
-  <img
-    src="/images/checks-passed.png"
-    alt="Screenshot of a deployment confirmation message that says All checks have passed."
-    style={{ borderRadius: '0.5rem' }}
-  />
-</Frame>
+<Columns cols={2}>
+  <Card title="Launch Your First Agent" icon="rocket" href="/get-started/quickstart/launch-your-first-agent">
+    Follow a step-by-step beginner guide to set up and test your first workflow.
+  </Card>
 
-## Code formatting
+  <Card title="Agents, Workflows, and Campaigns" icon="diagram-project" href="/key-concepts/agents-workflows-and-campaigns">
+    Understand the three building blocks behind most Travon deployments.
+  </Card>
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+  <Card title="Platform" icon="layer-group" href="/get-started/overview/platform">
+    Go back to the platform overview to understand how the main system layers fit together.
+  </Card>
 
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-    This may be due to an outdated version of node. Try the following:
-
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
-  </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+  <Card title="Travon AI" icon="circle-info" href="/get-started/overview/travon-ai">
+    Return to the main product overview for a broader introduction.
+  </Card>
+</Columns>
