@@ -30,9 +30,14 @@
           {
             "group": "Getting started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              {
+                "group": "Overview",
+                "pages": [
+                  "index",
+                  "quickstart",
+                  "development"
+                ]
+              }
             ]
           },
           {
@@ -77,19 +82,6 @@
               "api-reference/endpoint/create",
               "api-reference/endpoint/delete",
               "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Get Started",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "travon-ai",
-              "platform",
-              "dashboard"
             ]
           }
         ]
