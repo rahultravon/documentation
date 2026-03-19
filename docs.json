@@ -37,6 +37,18 @@
                   "quickstart",
                   "development"
                 ]
+              },
+              {
+                "group": "Quickstart",
+                "pages": [
+                  "https-thetrackapp-notion-site-taxbuddy-human-to-human-calling-api-3264d1aadb2c805183affe2efaacd542"
+                ]
+              },
+              {
+                "group": "Key Concepts",
+                "pages": [
+                  "agents-workflows-and-campaigns"
+                ]
               }
             ]
           },
