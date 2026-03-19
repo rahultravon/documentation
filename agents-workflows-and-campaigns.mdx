@@ -1,3 +1,304 @@
 ---
-title: "Agents Workflows And Campaigns"
+title: "Agents, Workflows, and Campaigns"
+description: "Understand the three core building blocks behind most Travon AI deployments."
 ---
+
+## Agents, workflows, and campaigns
+
+Most Travon setups become much easier to understand once you separate the platform into three core concepts:
+
+- **Agents**
+- **Workflows**
+- **Campaigns**
+
+These three building blocks work together to turn a business process into a live calling operation.
+
+<Note>
+If you remember only one thing from this page, remember this:  
+**Agent = who is speaking**  
+**Workflow = how the conversation should behave**  
+**Campaign = how the calls are launched at scale**
+</Note>
+
+## The three core concepts
+
+<Columns cols={3}>
+  <Card title="Agents" icon="microphone-lines">
+    The AI voice entity that speaks to the user and represents a specific business purpose.
+  </Card>
+
+  <Card title="Workflows" icon="route">
+    The conversation logic that decides what happens next during the call.
+  </Card>
+
+  <Card title="Campaigns" icon="phone-volume">
+    The execution layer that runs calls across a list, schedule, or operational setup.
+  </Card>
+</Columns>
+
+## What is an agent?
+
+An agent is the voice identity that interacts with the user.
+
+It defines things like:
+
+- who the agent is
+- why the agent is calling
+- the tone and speaking style
+- language and voice settings
+- the use case it is responsible for
+- the boundaries of what it should and should not do
+
+A strong agent is usually tied to one narrow business objective.
+
+### Examples of agents
+
+<Columns cols={2}>
+  <Card title="Admissions Qualification Agent" icon="graduation-cap">
+    Calls prospective students, checks interest, asks a few qualifying questions, and routes hot leads for follow-up.
+  </Card>
+
+  <Card title="Payment Reminder Agent" icon="wallet">
+    Reminds customers about dues, captures intent, and flags cases that need escalation or human intervention.
+  </Card>
+
+  <Card title="Appointment Confirmation Agent" icon="calendar-check">
+    Confirms scheduled appointments, captures reschedule intent, and closes the loop cleanly.
+  </Card>
+
+  <Card title="Inbound Routing Agent" icon="headset">
+    Answers incoming calls, identifies user intent, and directs the conversation to the right next step.
+  </Card>
+</Columns>
+
+<Tip>
+One agent should usually solve one problem well. Avoid making one agent responsible for too many unrelated tasks.
+</Tip>
+
+## What is a workflow?
+
+A workflow is the structured logic behind the conversation.
+
+It controls how the call moves from one stage to the next and how the agent should respond in common situations.
+
+A workflow can include:
+
+- greeting logic
+- identity confirmation
+- qualification steps
+- objection handling
+- fallback responses
+- escalation rules
+- transfer conditions
+- close conditions
+
+Without workflow structure, the agent may still sound fluent, but it can become inconsistent in real calls.
+
+## Why workflows matter
+
+A well-designed workflow helps the agent:
+
+- stay on task
+- avoid skipping steps
+- respond consistently
+- handle edge cases more cleanly
+- know when to stop
+- know when to transfer to a human
+
+<Warning>
+A long prompt is not the same as a good workflow. A shorter workflow with clear branches usually performs better than a long block of generic instructions.
+</Warning>
+
+## A simple workflow example
+
+Here is a typical first-pass workflow for a lead qualification use case:
+
+<Steps>
+  <Step title="Greeting">
+    The agent opens the call, introduces itself, and checks whether the user is available to talk.
+  </Step>
+
+  <Step title="Identity confirmation">
+    The agent confirms it is speaking to the right person before continuing.
+  </Step>
+
+  <Step title="Qualification">
+    The agent asks one or two questions that determine whether the user is a fit or shows intent.
+  </Step>
+
+  <Step title="Handle responses">
+    The workflow handles interest, hesitation, objections, busy replies, or confusion.
+  </Step>
+
+  <Step title="Set the next step">
+    The call ends with a clear outcome such as qualified, callback requested, not interested, or transfer required.
+  </Step>
+</Steps>
+
+## What is a campaign?
+
+A campaign is how an agent and workflow are actually executed across real calls.
+
+This is the operational layer that lets you run calls at scale.
+
+A campaign usually includes:
+
+- the selected agent
+- the contact list or audience
+- schedule and calling windows
+- retry rules
+- execution settings
+- campaign-level reporting
+- outcome tracking
+
+Think of the campaign as the way the business process reaches users in the real world.
+
+### What campaigns help you manage
+
+<Columns cols={2}>
+  <Card title="Audience" icon="users-viewfinder">
+    Decide who should be called and which list or segment should be included.
+  </Card>
+
+  <Card title="Timing" icon="clock">
+    Control when calls should run and how they should be distributed operationally.
+  </Card>
+
+  <Card title="Retries" icon="arrows-rotate">
+    Define what should happen if a user does not answer or the call does not complete.
+  </Card>
+
+  <Card title="Outcomes" icon="chart-line">
+    Track campaign-level results such as connected calls, transfers, qualified leads, or payment intent.
+  </Card>
+</Columns>
+
+## How the three work together
+
+The easiest way to think about the relationship is this:
+
+<Steps>
+  <Step title="The agent defines the voice identity">
+    This is the persona, purpose, and speaking behavior of the AI.
+  </Step>
+
+  <Step title="The workflow defines the conversation logic">
+    This controls how the call should progress and what happens in different situations.
+  </Step>
+
+  <Step title="The campaign defines the execution">
+    This launches the workflow at scale against a real audience with schedules, retries, and reporting.
+  </Step>
+</Steps>
+
+## Real-world example
+
+Suppose you are running an admissions outreach program.
+
+### Agent
+**Admissions Outreach Agent**
+
+The agent is responsible for talking to prospective students in a helpful and structured way.
+
+### Workflow
+The workflow might include:
+
+- confirm the student identity
+- explain why the call was made
+- ask whether the student is still interested
+- capture preferred course or callback preference
+- route interested prospects for follow-up
+- close politely if there is no interest
+
+### Campaign
+The campaign might include:
+
+- a list of prospective students
+- calling hours between 10 AM and 6 PM
+- one retry for missed calls
+- outcome labels such as interested, callback requested, not interested, or unreachable
+
+## Where human handoff fits in
+
+Not every conversation should remain fully automated.
+
+A good workflow should define when AI should stop and a human should take over.
+
+Common handoff cases include:
+
+- the user is highly interested
+- the user explicitly asks for a person
+- the user has a sensitive issue
+- the question goes beyond the allowed AI scope
+- the lead is high value and needs personalized handling
+
+<Note>
+Travon works especially well in AI + human operating models, where AI handles the first layer of conversation and qualified cases move to people.
+</Note>
+
+## Best practices
+
+### Keep the agent narrow
+A focused agent is easier to test, measure, and improve.
+
+### Design workflows around real behavior
+Plan for interruptions, unclear answers, busy users, and off-script questions.
+
+### Launch campaigns in small batches first
+A small initial rollout helps you catch problems before you scale.
+
+### Define outcomes clearly
+Every campaign should produce useful dispositions such as interested, not interested, callback requested, transferred, or completed.
+
+### Review real calls regularly
+Transcript review is one of the fastest ways to improve workflow quality.
+
+## Common mistakes
+
+<Columns cols={2}>
+  <Card title="Agent is too broad" icon="expand">
+    The agent tries to handle too many unrelated tasks and becomes inconsistent.
+  </Card>
+
+  <Card title="Workflow is too loose" icon="shuffle">
+    The agent sounds fluent but skips steps, rambles, or fails to close properly.
+  </Card>
+
+  <Card title="Campaign is launched too early" icon="rocket">
+    The team scales before reviewing enough real calls and fixing common issues.
+  </Card>
+
+  <Card title="Outcomes are unclear" icon="circle-question">
+    Calls happen, but the team cannot clearly measure what business result was achieved.
+  </Card>
+</Columns>
+
+## Summary
+
+Travon is easiest to understand when you separate design from execution.
+
+- **Agents** define the conversational identity
+- **Workflows** define the conversation logic
+- **Campaigns** define the operational rollout
+
+Once those three are clear, you can design stronger voice workflows and scale them more confidently.
+
+## Where to go next
+
+<Columns cols={2}>
+  <Card title="Launch Your First Agent" icon="rocket" href="/get-started/quickstart/launch-your-first-agent">
+    Follow the step-by-step guide to get your first workflow live.
+  </Card>
+
+  <Card title="Dashboard" icon="table-columns" href="/get-started/overview/dashboard">
+    Learn where agents, campaigns, history, and analytics live inside Travon.
+  </Card>
+
+  <Card title="Platform" icon="layer-group" href="/get-started/overview/platform">
+    Understand how the overall platform layers fit together.
+  </Card>
+
+  <Card title="Travon AI" icon="circle-info" href="/get-started/overview/travon-ai">
+    Return to the main overview page for the big-picture introduction.
+  </Card>
+</Columns>
