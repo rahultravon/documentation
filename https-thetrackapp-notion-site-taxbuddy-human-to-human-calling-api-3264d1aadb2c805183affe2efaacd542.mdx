@@ -1,3 +1,299 @@
 ---
-title: "launch-your-first-agent"
+title: "Launch Your First Agent"
+description: "A beginner-friendly guide to creating, testing, and launching your first Travon AI voice workflow."
 ---
+
+## Launch your first agent
+
+This guide walks you through the fastest way to get your first Travon workflow live.
+
+The goal is not to make the perfect production setup on day one. The goal is to launch one narrow use case, test it with real conversations, and improve it step by step.
+
+<Note>
+Your first agent should solve one clear problem well. Avoid trying to build a general-purpose voice assistant in your first launch.
+</Note>
+
+## Before you begin
+
+Make sure you have these basics ready:
+
+- a clear business use case
+- access to your Travon workspace
+- a basic call script or workflow idea
+- a lead list or inbound calling setup
+- telephony access, if your environment requires it
+- a clear success metric
+
+## What makes a good first use case
+
+Your first workflow should be:
+
+- repetitive
+- easy to measure
+- low to medium complexity
+- operationally useful
+- easy to describe in clear steps
+
+Good examples include:
+
+<Columns cols={2}>
+  <Card title="Lead qualification" icon="user-check">
+    Ask a few structured questions, identify intent, and route qualified users for follow-up.
+  </Card>
+
+  <Card title="Payment reminders" icon="wallet">
+    Remind users about dues, capture intent, and route cases that need human intervention.
+  </Card>
+
+  <Card title="Appointment confirmation" icon="calendar-check">
+    Confirm bookings, collect reschedule requests, or direct users to the right team.
+  </Card>
+
+  <Card title="Inbound routing" icon="phone-arrow-down-left">
+    Answer incoming calls, identify the caller’s intent, and guide them to the next step.
+  </Card>
+</Columns>
+
+<Warning>
+Avoid starting with a workflow that needs too many departments, too many edge cases, or too much free-form support knowledge.
+</Warning>
+
+## Step 1: Define the objective
+
+Start by answering one question:
+
+**What should this agent achieve by the end of the call?**
+
+Examples:
+
+- identify whether the lead is interested
+- confirm whether payment will be made today
+- collect a callback preference
+- route the caller to the right team
+- confirm an appointment status
+
+A strong objective should be specific and measurable.
+
+## Step 2: Create the agent
+
+Create a new agent and define the essentials.
+
+<Steps>
+  <Step title="Name the agent">
+    Use a clear name tied to the use case, such as Admissions Qualification Agent or Payment Reminder Agent.
+  </Step>
+
+  <Step title="Set the role">
+    Define who the agent is, why it is calling, and what it should help the user accomplish.
+  </Step>
+
+  <Step title="Choose the language and voice">
+    Select the language, tone, and voice style that match your audience and workflow.
+  </Step>
+
+  <Step title="Choose the call direction">
+    Decide whether the agent will be used for outbound campaigns, inbound handling, or both.
+  </Step>
+
+  <Step title="Define the end goal">
+    Add the primary outcome you want the agent to drive in the conversation.
+  </Step>
+</Steps>
+
+## Step 3: Design the workflow
+
+Write the call as a structured sequence, not just a loose script.
+
+A simple first workflow usually looks like this:
+
+<Steps>
+  <Step title="Greeting and identity check">
+    Open the conversation, confirm the user, and establish the purpose of the call.
+  </Step>
+
+  <Step title="Core qualification or action">
+    Ask one or two key questions tied to the business goal.
+  </Step>
+
+  <Step title="Handle common responses">
+    Prepare responses for interest, hesitation, busy signals, confusion, or objections.
+  </Step>
+
+  <Step title="Set the next step">
+    Capture an outcome such as qualified, callback requested, payment promised, or transfer needed.
+  </Step>
+
+  <Step title="Close clearly">
+    End the conversation politely and unambiguously.
+  </Step>
+</Steps>
+
+<Tip>
+For your first version, keep the workflow short. A compact workflow with strong branching is better than a long script with weak control.
+</Tip>
+
+## Step 4: Add business rules
+
+Once the basic conversation exists, define what should happen in common situations.
+
+Examples of useful rules:
+
+- if the user says they are busy, offer a callback
+- if the user asks for a human, route for follow-up
+- if the user is not interested, close politely
+- if the caller asks an unsupported question, use a bounded fallback
+- if voicemail is detected, end cleanly
+- if a high-intent signal appears, mark for priority handling
+
+## Step 5: Connect telephony
+
+Before launch, make sure the calling layer is ready.
+
+Depending on your setup, this may include:
+
+- assigning a number
+- connecting a telephony provider
+- configuring routing
+- validating webhooks
+- checking inbound or outbound readiness
+
+You do not need every advanced integration before your first test, but the calling path must be stable.
+
+## Step 6: Test internally first
+
+Run internal tests before calling real users.
+
+Check for issues like:
+
+<Columns cols={2}>
+  <Card title="Awkward openings" icon="comment">
+    Make sure the greeting sounds natural and matches the use case.
+  </Card>
+
+  <Card title="Long responses" icon="align-left">
+    Ensure the agent does not speak in large blocks when a shorter line would work better.
+  </Card>
+
+  <Card title="Workflow skipping" icon="shuffle">
+    Check that the agent does not jump ahead or miss critical steps.
+  </Card>
+
+  <Card title="Weak endings" icon="phone-slash">
+    Make sure the conversation ends cleanly when the objective is reached.
+  </Card>
+
+  <Card title="Language issues" icon="language">
+    Confirm the language stays consistent and appropriate for the user.
+  </Card>
+
+  <Card title="Bad edge-case behavior" icon="triangle-exclamation">
+    Test interruptions, unclear replies, busy responses, and unsupported questions.
+  </Card>
+</Columns>
+
+## Step 7: Launch a small batch
+
+Do not start with a full rollout.
+
+Start with a small batch so you can inspect:
+
+- transcript quality
+- answer rates
+- unexpected user behavior
+- workflow breakdowns
+- handoff performance
+- whether your outcome labels make sense
+
+<Note>
+A small launch is not a delay. It is the fastest way to get to a stable production workflow.
+</Note>
+
+## Step 8: Review and improve
+
+After the first live batch, review what actually happened on calls.
+
+Focus on:
+
+- where users got confused
+- where the agent spoke too much
+- where calls ended too early
+- where handoff should have happened
+- which questions produced the best outcomes
+- which fallback lines need improvement
+
+Use those learnings to tighten the workflow before scaling.
+
+## A simple launch checklist
+
+| Checklist item | Why it matters |
+|---|---|
+| One clear use case | Keeps the first deployment manageable |
+| One defined objective | Makes success measurable |
+| Structured workflow | Prevents the call from drifting |
+| Telephony readiness | Ensures calls can actually run |
+| Small test batch | Helps you catch issues early |
+| Review process | Creates an improvement loop |
+
+## Common beginner mistakes
+
+### Starting too broad
+
+Trying to handle too many user intents at once usually leads to weaker results.
+
+### Writing only a script
+
+A script helps, but production voice workflows also need branching, fallback, and closure logic.
+
+### Ignoring edge cases
+
+Busy users, unclear replies, interruptions, and unexpected questions are part of real calling behavior.
+
+### Scaling too early
+
+A workflow that sounds good in a few internal tests may still fail in real-world conditions.
+
+### Measuring the wrong thing
+
+Do not judge success only by call completion or audio fluency. Measure the business outcome the workflow is meant to drive.
+
+## What to build next
+
+Once your first workflow is stable, the next improvements usually include:
+
+<Columns cols={2}>
+  <Card title="Better fallback handling" icon="life-ring">
+    Improve how the agent responds when it cannot answer or the user goes off-script.
+  </Card>
+
+  <Card title="Human handoff logic" icon="users">
+    Define clearer rules for when AI should transfer, escalate, or stop.
+  </Card>
+
+  <Card title="Analytics review" icon="chart-column">
+    Look for conversion, drop-off, and quality patterns across many calls.
+  </Card>
+
+  <Card title="Integrations" icon="plug">
+    Connect the workflow to CRMs, APIs, or internal systems that support the business process.
+  </Card>
+</Columns>
+
+## Where to go next
+
+<Columns cols={2}>
+  <Card title="Agents, Workflows, and Campaigns" icon="diagram-project" href="/key-concepts/agents-workflows-and-campaigns">
+    Learn the three core concepts behind most Travon deployments.
+  </Card>
+
+  <Card title="Dashboard" icon="table-columns" href="/get-started/overview/dashboard">
+    Explore the main areas you will use to operate and improve your workflow.
+  </Card>
+
+  <Card title="Platform" icon="layer-group" href="/get-started/overview/platform">
+    Understand how the overall system fits together.
+  </Card>
+
+  <Card title="Travon AI" icon="circle-info" href="/get-started/overview/travon-ai">
+    Return to the product overview page for the big-picture introduction.
+  </Card>
+</Columns>
