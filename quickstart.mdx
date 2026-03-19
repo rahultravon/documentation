@@ -1,84 +1,214 @@
 ---
 title: "Platform"
-description: "Start building awesome documentation in minutes"
+description: "A high-level overview of the Travon AI platform and how its main building blocks work together."
 ---
 
-## Get started in three steps
+## Platform overview
 
-Get your documentation site running locally and make your first customization.
+Travon AI is built for teams that need to run voice workflows in production, not just experiment with conversational AI.
 
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion title="Clone your docs locally" icon="copy">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-
-  <Accordion title="Start the preview server" icon="rectangle-terminal">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-
-    <Tip>
-      Your preview updates automatically as you edit files.
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion title="Install our GitHub app" icon="github">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-  </Accordion>
-
-  <Accordion title="Update your site name and colors" icon="palette">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion title="Publish your docs" icon="rocket">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-  <Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-    Learn MDX syntax and start writing your documentation.
-  </Card>
-
-  <Card title="Customize style" icon="palette" href="/essentials/settings">
-    Make your docs match your brand perfectly.
-  </Card>
-
-  <Card title="Add code examples" icon="square-code" href="/essentials/code">
-    Include syntax-highlighted code blocks.
-  </Card>
-
-  <Card title="API documentation" icon="code" href="/api-reference/introduction">
-    Auto-generate API docs from OpenAPI specs.
-  </Card>
-</CardGroup>
+The platform brings together agent design, workflow control, telephony, campaign execution, analytics, and integrations so your team can manage the full lifecycle of a voice operation in one place.
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+The easiest way to understand Travon is to think of it as an operating layer for voice workflows. You define how the conversation should behave, connect the calling infrastructure, launch at scale, and continuously improve using real call data.
 </Note>
+
+## The main parts of the platform
+
+<Columns cols={2}>
+  <Card title="Agents" icon="microphone-lines">
+    Define the identity, tone, language, objective, and behavior of each AI voice agent.
+  </Card>
+
+  <Card title="Workflows" icon="route">
+    Structure conversations into guided steps with branching, fallback handling, and handoff logic.
+  </Card>
+
+  <Card title="Campaigns" icon="phone-volume">
+    Launch outbound calls or manage operational execution across batches, schedules, and retry flows.
+  </Card>
+
+  <Card title="Telephony" icon="phone">
+    Connect numbers, providers, routing, webhooks, and the infrastructure required to place or receive calls.
+  </Card>
+
+  <Card title="History and analytics" icon="chart-line">
+    Review transcripts, call outcomes, trends, and operational performance to improve results over time.
+  </Card>
+
+  <Card title="Integrations" icon="plug">
+    Connect Travon to your existing systems, data sources, APIs, and business workflows.
+  </Card>
+</Columns>
+
+## How the platform fits together
+
+<Steps>
+  <Step title="Design the agent">
+    Start by defining what the agent should do, how it should sound, which language it should use, and what business goal it is meant to achieve.
+  </Step>
+
+  <Step title="Map the workflow">
+    Convert the conversation into a structured path with key stages, decision points, fallback behavior, and clear success conditions.
+  </Step>
+
+  <Step title="Connect the calling layer">
+    Configure numbers, telephony providers, routing rules, and any event handling required for your deployment.
+  </Step>
+
+  <Step title="Launch and monitor">
+    Run a small test batch or activate the workflow for inbound usage, then monitor transcripts, exceptions, and outcomes.
+  </Step>
+
+  <Step title="Improve continuously">
+    Refine prompts, workflow steps, handoff conditions, and operational settings based on real-world conversations.
+  </Step>
+</Steps>
+
+## Core platform layers
+
+### Agent layer
+
+This is where you define the conversational identity of the system.
+
+It typically includes:
+
+- agent purpose
+- language and voice
+- role and tone
+- supported scope
+- response style
+- completion behavior
+
+A well-designed agent should feel consistent across calls and stay aligned to a specific business objective.
+
+### Workflow layer
+
+This is the logic engine behind the conversation.
+
+A workflow can include:
+
+- step-by-step progression
+- branching conditions
+- objection handling
+- fallback responses
+- escalation rules
+- completion and closure logic
+
+<Tip>
+For most use cases, workflow quality matters more than prompt length. A shorter, well-structured workflow usually performs better than a long, generic prompt.
+</Tip>
+
+### Execution layer
+
+This is where the platform runs your workflows operationally.
+
+It includes:
+
+- outbound campaigns
+- inbound routing
+- scheduling
+- retries
+- call status handling
+- operational controls
+
+This is the layer that turns an agent into an actual calling program.
+
+### Telephony layer
+
+This connects Travon to the phone network and event infrastructure.
+
+Depending on your setup, this may involve:
+
+- phone numbers
+- provider connections
+- inbound and outbound routing
+- webhook events
+- call state tracking
+- recording and transcript pipelines
+
+### Review and optimization layer
+
+Once calls are live, teams need a clear feedback loop.
+
+This layer helps you review:
+
+- individual call transcripts
+- summaries and outcomes
+- failure patterns
+- drop-off points
+- handoff behavior
+- campaign trends
+
+## What the platform is designed for
+
+Travon is most valuable when your use case has one or more of these characteristics:
+
+<Columns cols={2}>
+  <Card title="High call volume" icon="signal-stream">
+    You need to handle repetitive call workflows consistently across many users.
+  </Card>
+
+  <Card title="Structured business logic" icon="sitemap">
+    The conversation must follow a defined process rather than free-form chat.
+  </Card>
+
+  <Card title="AI + human collaboration" icon="users">
+    AI should handle the first layer, but some conversations need transfer, escalation, or manual follow-up.
+  </Card>
+
+  <Card title="Operational measurement" icon="chart-mixed">
+    You need clear outcomes, reporting, and continuous workflow improvement.
+  </Card>
+</Columns>
+
+## Typical rollout path
+
+Most teams adopt the platform in stages.
+
+### Stage 1: Start with one workflow
+Pick one use case with clear business value, such as lead qualification, payment reminders, or appointment confirmation.
+
+### Stage 2: Stabilize the behavior
+Test with small batches, review transcripts, and fix edge cases before trying to scale.
+
+### Stage 3: Connect systems
+Integrate telephony, CRMs, internal APIs, or reporting destinations to fit your operational setup.
+
+### Stage 4: Expand coverage
+Once the first workflow is stable, expand to more teams, more use cases, more languages, or more call volumes.
+
+<Warning>
+Do not try to launch multiple complex workflows on day one. A narrow and well-tested first deployment almost always leads to better long-term results.
+</Warning>
+
+## What success looks like
+
+A strong Travon deployment usually has:
+
+- one clearly defined use case
+- a controlled conversation flow
+- clear fallback and handoff rules
+- measurable outcomes
+- regular transcript review
+- an improvement loop after launch
+
+## Where to go next
+
+<Columns cols={2}>
+  <Card title="Dashboard" icon="table-columns" href="/get-started/overview/dashboard">
+    Learn where agents, campaigns, history, analytics, and integrations live inside the Travon dashboard.
+  </Card>
+
+  <Card title="Launch Your First Agent" icon="rocket" href="/get-started/quickstart/launch-your-first-agent">
+    Follow the step-by-step quickstart for getting your first workflow live.
+  </Card>
+
+  <Card title="Agents, Workflows, and Campaigns" icon="diagram-project" href="/key-concepts/agents-workflows-and-campaigns">
+    Understand the three core concepts behind most Travon deployments.
+  </Card>
+
+  <Card title="Travon AI Overview" icon="circle-info" href="/get-started/overview/travon-ai">
+    Go back to the main overview page for a product-level introduction.
+  </Card>
+</Columns>
